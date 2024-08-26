@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(/IMAGES/kvb-bg3.jpg);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(0, 128, 0,.8); */
+    background: linear-gradient(greenyellow,green);
+    padding: 10px 20px;
+    color: #fff;
+    margin-bottom: 22px;
+}
+header .logo img{
+    height: 100px;
+    width: 150px;
+    border-radius: 50%;
+   
+}
+nav{
+
+    mix-blend-mode:screen;
+    border-radius: 20px;  
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: greenyellow;
+    border-radius: 4px;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.office {
+    background-color: rgb(255, 255, 255,.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    
+}
+
+.office h2 {
+    font-size: 18px;
+    color: #006a33;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.office p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.office a {
+    color: #006a33;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.office a:hover {
+    text-decoration: underline;
+}
+footer {
+
+    margin-top:65px ;
+    background: linear-gradient(greenyellow,green);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+   
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    .office {
+        max-width: 100%;
+    }
+}
+
+/* Responsive Styles */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 15px;
+    }
+
+    nav ul li a:hover {
+        background-color: greenyellow;
+        border-radius: 0;
+    }
+}

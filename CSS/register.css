@@ -1,0 +1,266 @@
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(/IMAGES/kvb-bg4.webp);
+    background-position: center;
+    background-size: cover;
+   
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(greenyellow,green);
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bolder;
+}
+#header{
+    height: auto;
+    width: 100%;
+}
+header .logo img{
+    height: 100px;
+    width: 150px;
+    border-radius: 50%;
+   
+}
+nav{
+    mix-blend-mode:screen;
+    border-radius: 20px;
+
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: greenyellow;
+    border-radius: 4px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(10);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    
+    margin-bottom: 20px;
+}
+
+.textbox {
+    margin-bottom: 15px;
+}
+
+.textbox label {
+    display: block;
+    margin-bottom: 5px;
+    color: green;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px whitesmoke;
+}
+
+.textbox input {
+    width: 400px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 400px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+}
+
+.dashboard-section {
+    margin-bottom: 20px;
+}
+
+#login{
+    margin-top: 120px;
+}
+#admin-login{
+    margin-top: 120px;
+}
+#statement {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 14px;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 3px 3px 5px green;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.transaction-action {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Confirmation Popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+}
+
+.popup button {
+    width: auto;
+    padding: 5px 15px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+footer {
+    margin-top:50px ;
+    background: linear-gradient(greenyellow,green);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+
+   
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
+
+
+/* Responsive Styles */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+nav ul {
+flex-direction: column;
+align-items: center;
+}
+
+nav ul li {
+margin-left: 0;
+margin-bottom: 10px;
+}
+.transaction-action{
+    display: grid;
+}
+
+
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+nav ul {
+flex-direction: column;
+align-items: flex-start;
+}
+
+nav ul li {
+margin-left: 0;
+width: 100%;
+}
+
+nav ul li a {
+display: block;
+width: 100%;
+padding: 15px;
+}
+
+nav ul li a:hover {
+background-color: greenyellow;
+border-radius: 0;
+}
+.transaction-action{
+    display: grid;
+}
+
+}

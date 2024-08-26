@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVB-Karur Vysya Bank</title>
+    <link rel="icon" href="./IMAGES/kvb favi.png">
+    <link rel="stylesheet" href="./CSS/register.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="container" id="header">
+        <div class="logo">
+            <img src="./IMAGES/kvb-logo.jpg" alt="kvblogo">
+            <!-- <h1>KVB-Karur</h1> -->
+        </div>
+        
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Logout    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    </header>
+    <!-- Registration Form -->
+    <div id="registration" class="container" >
+        <h1>Register</h1>
+        <form id="register-form">
+            <div class="textbox">
+                <label for="reg-username">Username:</label>
+                <input type="text" id="reg-username" required>
+            </div>
+            <div class="textbox">
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" required>
+            </div>
+            <div class="textbox">
+                <label for="reg-mobile">Mobile Number:</label>
+                <input type="text" id="reg-mobile" required minlength="10" maxlength="10">
+            </div>
+            <div class="textbox">
+                <label for="reg-password">Password:</label>
+                <input type="password" id="reg-password" required minlength="8" >
+            </div>
+            <div class="textbox">
+                <label for="reg-confirm-password">Confirm Password:</label>
+                <input type="password" id="reg-confirm-password" required minlength="8">
+            </div>
+            <button type="submit">Register</button>
+            <p id="reg-message" class="message"></p>
+        </form>
+        <button onclick="showLogin()">Already have an account? Log in</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login" class="container" style="display: none;">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="textbox">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required>
+            </div>
+            <div class="textbox">
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" minlength="8" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="login-message" class="message"></p>
+        </form>
+        <button onclick="showRegistration()" >Don't have an account? Register</button>
+        <button onclick="showAdminLogin()"style="margin-top: 5px;">Admin Login</button>
+    </div>
+
+    <!-- Admin Login Form -->
+    <div id="admin-login" class="container" style="display: none;">
+        <h1>Admin Login</h1>
+        <form id="admin-login-form">
+            <div class="textbox">
+                <label for="admin-login-username">Username:</label>
+                <input type="text" id="admin-login-username" required>
+            </div>
+            <div class="textbox">
+                <label for="admin-login-password">Password:</label>
+                <input type="password" id="admin-login-password">
+            </div>
+            <button type="submit">Login</button>
+            <p id="admin-login-message" class="message"></p>
+        </form>
+        <button onclick="showLogin()">Back to User Login</button>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="admin-dashboard" class="container" style="display: none;">
+        <h1>Admin Dashboard</h1>
+        <div class="dashboard-section">
+            <h2>Users</h2>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button onclick="clearUserTable()">Clear Table</button>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- User Dashboard -->
+    <div id="user-dashboard" class="container" style="display: none;">
+        <h1>User Dashboard</h1>
+        <p>Account Number: <span id="user-account-number"></span></p>
+        <div class="dashboard-section">
+            <h2>Loan</h2>
+            <form id="loan-form">
+                <div class="textbox">
+                    <label for="loan-amount">Loan Amount:</label>
+                    <input type="number" id="loan-amount" required>
+                </div>
+                <div class="textbox">
+                    <label for="loan-years">Years:</label>
+                    <input type="number" id="loan-years" required>
+                </div>
+                <div class="textbox">
+                    <label for="interest-rate">Interest Rate (%):</label>
+                    <input type="number" id="interest-rate" step="0.01" required>
+                </div>
+                <button type="submit">Calculate</button>
+            </form>
+            <p id="loan-result" class="message"></p>
+        </div>
+
+        <div class="dashboard-section">
+            <h2>Transaction</h2>
+            <div class="transaction-action">
+                <form id="deposit-form">
+                    <div class="textbox">
+                        <label for="deposit-amount">Deposit Amount:</label>
+                        <input type="number" id="deposit-amount" required>
+                    </div>
+                    <button type="submit">Deposit</button>
+                </form>
+                <form id="withdraw-form">
+                    <div class="textbox">
+                        <label for="withdraw-amount">Withdraw Amount:</label>
+                        <input type="number" id="withdraw-amount" required>
+                    </div>
+                    <button type="submit">Withdraw</button>
+                </form>
+            </div>
+            <button onclick="toggleStatement()" style="margin-top: 5px;">Show/Hide Statement</button>
+            <div id="statement" style="display:none;">
+                <div id="statement-content"></div>
+            </div>
+            <p>Current Balance: $<span id="current-balance">0</span></p>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Deposit and Withdraw Confirmation Popup -->
+    <div id="confirmation-popup" class="popup">
+        <h2>Confirmation</h2>
+        <p id="confirmation-message"></p>
+        <form id="confirmation-form">
+            <div class="textbox">
+                <label for="confirm-account">Account Number (Mobile Number):</label>
+                <input type="text" id="confirm-account" required>
+            </div>
+            <div class="textbox">
+                <label for="confirm-password">Password:</label>
+                <input type="password" id="confirm-password" required>
+            </div>
+            <button type="submit">Confirm</button>
+            <button type="button" onclick="closePopup()">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Sitemap</a>
+        </div>
+        <p>&copy; 2024 Bank Of KVB. All rights reserved.</p>
+    </footer>
+
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
