@@ -236,7 +236,11 @@ margin-bottom: 10px;
 
 
 }
-
+@media (max-height: 100vh) {
+  body {
+    overflow-y: hidden;
+  }
+}
 /* For mobile devices */
 @media (max-width: 480px) {
 nav ul {
